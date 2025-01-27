@@ -7,7 +7,7 @@
   
 <script>
   // Import the Navbar component
-  import Navbar from '../components/NavBar.vue'; // Update path if it's inside src/components
+  import Navbar from '../components/NavBar.vue';
 
   
   export default {
