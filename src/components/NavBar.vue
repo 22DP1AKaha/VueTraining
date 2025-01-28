@@ -1,107 +1,176 @@
 <template>
-  <header>
-      <nav> 
-          <div class="logo">
-            <img src="/foodyML_logo.png" alt="Logo" class="logo-img">
-          </div>
-
-          <ul class="nav-links">
-              <li class="nav-link"><a href="../html/Karte_ar_hover_efektiem.html">Sākums</a></li>
-              <li class="nav-link"><a href="#">Receptes</a></li>
-          </ul>
-
-          <button class="login-button">
-            Login/Register
-          </button>
-      </nav>    
-  </header>
+  <nav>
+    <div class="logo">
+      <img src="/foodyML_logo.png" alt="logo" />
+      <h1>FOODYML</h1>
+    </div>
+    <ul>
+      <li><a href="#">Sākums</a></li>
+      <li><a href="#">Receptes</a></li>
+      <li><a href="#">Ienākt</a></li>
+    </ul>
+    <div class="hamburger" @click="toggleNav">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </nav>
+  <div class="menubar" :class="{ active: menuActive }">
+    <ul>
+      <li><a href="#">Sākums</a></li>
+      <li><a href="#">Receptes</a></li>
+      <li><a href="#">Ienākt</a></li>
+    </ul>
+  </div>
 </template>
 
-
 <script>
-export default {
-  name: "Navbar",
-};
+  export default {
+    name: "Navbar",
+    data() {
+      return {
+        menuActive: false,
+      };
+    },
+    methods: {
+      toggleNav() {
+        this.menuActive = !this.menuActive;
+      },
+    },
+  };
 </script>
 
 <style scoped>
-nav {
-  background-color: #cec2a2;
-  padding: 1.875rem; 
-  display: flex;
-  justify-content: space-between;  /* This ensures the logo and menu are spaced out */
-  align-items: center;  /* Vertically align all items in the navbar */
-}
-
-.logo-img {
-  max-width: 120px;  /* Set a reasonable maximum size for the logo */
-  height: auto;
-}
-
-.nav-links {
-    list-style-type: none;
-    margin: 0;
+  *{
+    font-family: "Poppins", sans-serif;
+  }
+  nav {
+    padding: 5px 5%;
     display: flex;
-    border-bottom: solid gray;
-}
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    z-index: 1;
+  }
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+  nav .logo img {
+    height: 35px;
+    width: auto;
+    margin-right: 10px;
+  }
+  nav .logo h1 {
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-.nav-link {
-    display: inline-block;
-    padding: 0.825rem;
-    padding-bottom: 2rem;
-    margin: 0;
-    position: relative;  
-}
-
-.nav-link a {
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+  nav ul li a {
     text-decoration: none;
-    color: gray;
-    padding: 0.5rem 1rem;
-    border-radius: 0.313rem;
-    font-size: 1.375rem;
-    font-weight: bold;
-    position: relative;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+    color: #000;
+    font-size: 95%;
+    font-weight: 400;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
 
-.nav-link::after {
-    content: '';
+  nav ul li a:hover {
+    background-color: #f5f5f5;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 25px;
+    height: 1px;
+    background-color: #1f1f1f;
+    display: block;
+    margin: 7px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+  }
+
+  .hamburger-active .line:nth-child(2) {
+    width: 0px;
+  }
+
+  .hamburger-active .line:nth-child(1),
+  .hamburger-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .hamburger-active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+
+  .hamburger-active .line:nth-child(3) {
+    transform: translateY(-5px) rotate(90deg);
+  }
+
+  .menubar {
     position: absolute;
+    top: 0;
+    left: -60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    height: 100vh;
+    padding: 20% 0;
+    background: rgba(255, 255, 255);
+    transition: all 0.5s ease-in;
+    z-index: 2;
+  }
+  .active {
     left: 0;
-    right: 0;
-    bottom: 0; 
-    height: 0px; 
-    background-color: #0066b2; 
-    transition: height 0.3s ease;  
-}
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
 
-.nav-link:hover::after {
-    height: 0.313rem; 
-}
+  .menubar ul {
+    padding: 0;
+    list-style: none;
+  }
+  .menubar ul li {
+    margin-bottom: 32px;
+  }
 
-.nav-link:hover a {
-    transform: translateY(-3px); 
-}
+  .menubar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 95%;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
 
-/* Button styles */
-.login-button {
-  background-color: #0066b2;
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;  /* Makes the button rounded */
-  font-size: 1.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #004f8d;
-  transform: translateY(-2px);
-}
-
-.login-button:focus {
-  outline: none;
-}
+  .menubar ul li a:hover {
+    background-color: #f5f5f5;
+  }
+  @media screen and (max-width: 790px) {
+    .hamburger {
+      display: block;
+    }
+    nav ul {
+      display: none;
+    }
+  }
 </style>
