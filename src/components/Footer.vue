@@ -8,7 +8,7 @@
         </div>
         
         <!-- Footer Text -->
-        <p class="footer-text">&copy; 2025 FOODYML. All rights reserved.</p>
+        <p class="footer-text">&copy; 2025 FOODYML. Visas tiesības aizsargātas.</p>
       </div>
     </footer>
   </template>
