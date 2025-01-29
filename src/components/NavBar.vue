@@ -5,9 +5,9 @@
       <h1>FOODYML</h1>
     </div>
     <ul>
-      <li><a href="#">Sākums</a></li>
-      <li><a href="#">Receptes</a></li>
-      <li><a href="#">Ienākt</a></li>
+      <li><a href="/">Sākums</a></li>
+      <li><a href="/receptes">Receptes</a></li>
+      <li><a href="/login">Ienākt</a></li>
     </ul>
     <div class="hamburger" @click="toggleNav">
       <span class="line"></span>
@@ -42,7 +42,7 @@
 
 <style scoped>
   *{
-    font-family: "Poppins", sans-serif;
+    font-family: monospace;
   }
   nav {
     padding: 5px 5%;
@@ -52,6 +52,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     z-index: 1;
+
   }
   nav .logo {
     display: flex;
@@ -63,7 +64,7 @@
     margin-right: 10px;
   }
   nav .logo h1 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -80,14 +81,14 @@
   nav ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 95%;
-    font-weight: 400;
+    font-size: 1.2rem;
+
     padding: 4px 8px;
     border-radius: 5px;
   }
 
   nav ul li a:hover {
-    background-color: #f5f5f5;
+    background-color: rgb(243, 213, 170);
   }
 
   .hamburger {

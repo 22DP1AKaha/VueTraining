@@ -21,11 +21,11 @@
   
 <style scoped>
     *{
-    font-family: "Poppins", sans-serif; 
+      font-family: monospace; 
     }
 
   .footer {
-    background-color: white; /* White background */
+    background-color: blanchedalmond;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to differentiate from the page */
     padding: 20px 0;
     text-align: center;
@@ -52,7 +52,7 @@
   }
   
   .logo h1 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
     -webkit-background-clip: text;
     background-clip: text;

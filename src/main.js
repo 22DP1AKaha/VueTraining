@@ -1,14 +1,13 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from './pages/Home.vue'; // Import your Home component
+import App from './App.vue'; // ✅ Import the main App.vue
+import Home from './pages/Home.vue';
+import Receptes from './pages/receptes.vue';
 
 // Define routes
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  }
+  { path: '/', name: 'Home', component: Home },
+  { path: '/receptes', name: 'Receptes', component: Receptes }
 ];
 
 // Set up the router
@@ -17,7 +16,7 @@ const router = createRouter({
   routes
 });
 
-// Create the app instance, use the router, and mount it
-createApp(Home)  // You can directly mount the Home component here
+// ✅ Mount App.vue, NOT Home.vue
+createApp(App)
   .use(router)
   .mount('#app');
