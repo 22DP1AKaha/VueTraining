@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="card-flexbox">
       <div class="card-container">
 
@@ -21,21 +20,13 @@
       </div> <!-- Close card-container -->
     </div> <!-- Close card-flexbox -->
     
-    <Footer /> <!-- Move Footer outside -->
   </div>
     
 </template>
 
 <script>
-  import Navbar from '../components/NavBar.vue';
-  import Footer from '@/components/Footer.vue';
-
   export default {
-    name: 'Home',
-    components: {
-      Navbar,
-      Footer,
-    },
+    name: 'Home'
   };
 </script>
 
@@ -59,7 +50,6 @@
   .card {
       font-family: monospace;
       padding: 1.5rem;
-      background-color: white;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       overflow: visible;
       transition: transform 0.3s ease, box-shadow 0.3s ease;

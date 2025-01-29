@@ -7,6 +7,7 @@
     <ul>
       <li><a href="/">Sākums</a></li>
       <li><a href="/receptes">Receptes</a></li>
+      <li><a href="/aireceptes">Ģenerēšana</a></li>
       <li><a href="/login">Ienākt</a></li>
     </ul>
     <div class="hamburger" @click="toggleNav">
