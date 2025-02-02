@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AIreceptes from '../pages/aireceptes.vue';
 import Home from '../pages/home.vue';
+import Ienakt from '../pages/ienakt.vue';
 import Receptes from '../pages/receptes.vue';
+import Registreties from '../pages/registreties.vue';
 
 const routes = [
   {
@@ -26,6 +28,12 @@ const routes = [
     path: '/ienakt',
     name: 'Ienakt',
     component: Ienakt
+  },
+
+  {
+    path: '/registreties',
+    name: 'Registreties',
+    component: Registreties
   }
 ];
 

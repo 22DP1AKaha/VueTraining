@@ -22,8 +22,8 @@
         </div>
       </div>
   
-      <!-- Divider Line -->
-      <div class="divider"></div>
+      <!-- Divider Line
+      <div class="divider"></div> -->
   
       <!-- Recipe Generation Section -->
       <div class="recipe-results">

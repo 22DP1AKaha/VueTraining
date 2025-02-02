@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav v-if="!hideNav">
     <div class="logo">
       <img src="/foodyML_logo.png" alt="logo" />
       <h1>FOODYML</h1>
@@ -8,7 +8,7 @@
       <li><a href="/">Sākums</a></li>
       <li><a href="/receptes">Receptes</a></li>
       <li><a href="/aireceptes">Ģenerēšana</a></li>
-      <li><a href="/login">Ienākt</a></li>
+      <li><a href="/ienakt">Ienākt</a></li>
     </ul>
     <div class="hamburger" @click="toggleNav">
       <span class="line"></span>
@@ -16,30 +16,36 @@
       <span class="line"></span>
     </div>
   </nav>
-  <div class="menubar" :class="{ active: menuActive }">
+  <div class="menubar" :class="{ active: menuActive }" v-if="!hideNav">
     <ul>
-      <li><a href="#">Sākums</a></li>
-      <li><a href="#">Receptes</a></li>
-      <li><a href="#">Ienākt</a></li>
+      <li><a href="/">Sākums</a></li>
+      <li><a href="/receptes">Receptes</a></li>
+      <li><a href="/ienakt">Ienākt</a></li>
     </ul>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Navbar",
-    data() {
-      return {
-        menuActive: false,
-      };
+export default {
+  name: "Navbar",
+  data() {
+    return {
+      menuActive: false,
+    };
+  },
+  computed: {
+    hideNav() {
+      return this.$route.path === "/ienakt" || this.$route.path === "/registreties";
     },
-    methods: {
-      toggleNav() {
-        this.menuActive = !this.menuActive;
-      },
+  },
+  methods: {
+    toggleNav() {
+      this.menuActive = !this.menuActive;
     },
-  };
+  },
+};
 </script>
+
 
 <style scoped>
   *{
