@@ -18,7 +18,7 @@ export default {
   name: "Footer",
   computed: {
     hideFooter() {
-      return this.$route.path === "/ienakt" || this.$route.path === "/registreties";
+      return this.$route.path === "/ienakt" || this.$route.path === "/registreties" || this.$route.path === "/aizmirsu-paroli" || this.$route.path === "/aireceptes";
     },
   },
 };
