@@ -6,6 +6,7 @@ import Home from './pages/Home.vue';
 import Ienakt from './pages/ienakt.vue';
 import Receptes from './pages/receptes.vue';
 import Registreties from './pages/registreties.vue';
+import ReceptesInstrukcijas from './pages/receptesinstrukcijas.vue';
 
 // Define routes
 const routes = [
@@ -13,7 +14,8 @@ const routes = [
   { path: '/receptes', name: 'Receptes', component: Receptes },
   { path: '/aireceptes', name: 'AIreceptes', component: AIreceptes },
   { path: '/ienakt', name: 'Ienakt', component: Ienakt },
-  { path: '/registreties', name: 'Registreties', component: Registreties }
+  { path: '/registreties', name: 'Registreties', component: Registreties },
+  { path: '/recipe/:id', name: 'ReceptesInstrukcijas', component: ReceptesInstrukcijas, props: true }
 
 ];
 

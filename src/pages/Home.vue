@@ -7,14 +7,18 @@
           <img src="/Burgers.jpg" alt="Photo"><br>
           <h1>Recepšu meklēšana</h1>
           <p>Meklē sev vēlamo recepti.</p><br>
-          <button class="myBtn">Izmēģināt</button>
+          <a href="/receptes">
+            <button class="myBtn">Izmēģināt</button>
+          </a>
         </div>
 
         <div class="card">
           <img src="/Pelmeni.jpg" alt="Photo"><br>
           <h1>Izmēģini mūsu AI</h1>
           <p>Ģenerē receptes ar sev pieejamajiem produktiem.</p><br>
-          <button class="myBtn">Izmēģināt</button>
+          <a href="/aireceptes">
+            <button class="myBtn">Izmēģināt</button>
+          </a>
         </div>
 
       </div> <!-- Close card-container -->

@@ -4,6 +4,8 @@ import Home from '../pages/home.vue';
 import Ienakt from '../pages/ienakt.vue';
 import Receptes from '../pages/receptes.vue';
 import Registreties from '../pages/registreties.vue';
+import receptesInstrukcijas from '../pages/receptesinstrukcijas.vue';
+
 
 const routes = [
   {
@@ -34,6 +36,11 @@ const routes = [
     path: '/registreties',
     name: 'Registreties',
     component: Registreties
+  },
+  { path: '/recipe/:id', 
+    name: 'ReceptesInstrukcijas', 
+    component: ReceptesInstrukcijas, 
+    props: true
   }
 ];
 

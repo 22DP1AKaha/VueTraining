@@ -33,6 +33,9 @@
           </div>
         </div>
       </div>
+      <div v-else>
+        <p v-if="selectedIngredients.length">Nav atrastas receptes ar izvēlētajām sastāvdaļām.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -61,9 +64,9 @@ export default {
       } else {
         this.selectedIngredients.push(ingredient);
       }
-
       this.generateRecipe();
     },
+
     async generateRecipe() {
       if (this.selectedIngredients.length === 0) {
         this.recipes = [];
@@ -71,15 +74,30 @@ export default {
       }
 
       const ingredientQuery = this.selectedIngredients.join(",");
-      const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientQuery}&number=5&apiKey=${this.apiKey}`;
+      const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientQuery}&number=5&ignorePantry=true&apiKey=${this.apiKey}`;
+
+      console.log("Request URL:", url); // DEBUG: Check if API request is correct
 
       try {
         const response = await axios.get(url);
+
+        console.log("API Response:", response.data); // DEBUG: Log the response
+
+        if (!response.data || response.data.length === 0) {
+          console.warn("No recipes found for these ingredients.");
+          this.recipes = [];
+          return;
+        }
+
+        // Extract and store recipes
         this.recipes = response.data.map(recipe => ({
           id: recipe.id,
           title: recipe.title,
           image: recipe.image
         }));
+
+        console.log("Filtered Recipes:", this.recipes); // DEBUG: See final recipes
+
       } catch (error) {
         console.error("Error fetching recipes:", error);
       }
