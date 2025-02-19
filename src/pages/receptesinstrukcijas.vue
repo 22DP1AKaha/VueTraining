@@ -17,10 +17,11 @@
     <div class="recipe-content">
       <!-- Ingredients -->
       <div class="ingredients">
+        <h2>Sastāvdaļas:</h2>
         <select v-model="servings" id="portion-size" @change="updateIngredients">
           <option v-for="portion in portionSizes" :key="portion" :value="portion">{{ portion }}</option>
         </select>
-        <h2>Sastāvdaļas:</h2>
+        
         <ul>
           <li v-for="(ingredient, index) in adjustedIngredients" :key="index">
             {{ ingredient }}
@@ -69,7 +70,9 @@ export default {
             "1 burgera maizīte",
             "1 liellopa kotlete",
             "1 šķēle siera",
-            "Salāti, tomāti, marinēti gurķi",
+            "50g Salāti",
+            "1 tomāts",
+            "1 marinēts gurķis",
             "Mērces pēc izvēles",
           ],
           instructions: [
@@ -239,27 +242,29 @@ export default {
 }
 
 .back-btn {
-  margin-top: 15px;
-  padding: 8px 15px;
-  background-color: #ff4500;
-  color: white;
+  padding: 1rem 3rem;
+  font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  color: white;
+  background: black;
   cursor: pointer;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .back-btn:hover {
-  background-color: #d93d00;
+  background-color: dimgrey;
 }
 
 #portion-size {
   padding: 8px 12px;
-  border: 2px solid #ff4500;
+  border: 2px solid dimgray;
   border-radius: 5px;
   background-color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 100%;
   max-width: 200px;
 }
