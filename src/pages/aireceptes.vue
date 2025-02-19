@@ -50,7 +50,8 @@ export default {
       ingredientCategories: [
         { name: "Pantry", ingredients: ["milk", "cheese", "flour", "sugar", "butter", "salt"] },
         { name: "Fruits", ingredients: ["tomato", "banana", "orange"] },
-        { name: "Meat", ingredients: ["chicken", "pork", "beef"] }
+        { name: "Meat", ingredients: ["chicken", "pork", "beef"] },
+        { name: "Vegetables", ingredients: ["carrot", "beet", "potato"] }
       ],
       selectedIngredients: [],
       recipes: [],
@@ -181,7 +182,8 @@ export default {
 }
 
 .recipe-image {
-  width: 100%;
+  width: 25rem;
+  height: 20rem;
   border-radius: 8px;
 }
 </style>

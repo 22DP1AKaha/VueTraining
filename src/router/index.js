@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AIreceptes from '../pages/aireceptes.vue';
-import Home from '../pages/home.vue';
+import Home from '../pages/Home.vue';
 import Ienakt from '../pages/ienakt.vue';
 import Receptes from '../pages/receptes.vue';
 import Registreties from '../pages/registreties.vue';
@@ -37,9 +37,9 @@ const routes = [
     name: 'Registreties',
     component: Registreties
   },
-  { path: '/recipe/:id', 
+  { path: '/recepte/:id', 
     name: 'ReceptesInstrukcijas', 
-    component: ReceptesInstrukcijas, 
+    component: receptesInstrukcijas, 
     props: true
   }
 ];

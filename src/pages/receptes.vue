@@ -16,7 +16,7 @@
         v-for="recipe in filteredRecipes"
         :key="recipe.id"
         class="recipe-card"
-        @click="showRecipe(recipe.title)"
+        @click="showRecipe(recipe.id)"
       >
         <img :src="recipe.image" :alt="recipe.title" />
         <h2>{{ recipe.title }}</h2>
@@ -47,8 +47,8 @@ export default {
     },
   },
   methods: {
-    showRecipe(title) {
-      alert(`Tu izvēlējies: ${title}`);
+    showRecipe(id) {
+      this.$router.push(`/recepte/${id}`);
     },
   },
 };
