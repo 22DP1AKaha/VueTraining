@@ -62,7 +62,6 @@ Zemāk ir aprakstītas tabulas un to atbilstība 3NF.
 | Kolonna               | Tips      | Apraksts |
 |-----------------------|----------|----------|
 | receptes_id         | INT (PK) | Unikāls receptes identifikators |
-| lietotaja_id        | INT (FK) | Atsauce uz lietotāju |
 | nosaukums           | VARCHAR  | Receptes nosaukums |
 | apraksts           | TEXT     | Gatavošanas apraksts |
 | gatavošanas_laiks   | INT      | Laiks minūtēs |
