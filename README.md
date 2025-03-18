@@ -100,7 +100,7 @@ Zemāk ir aprakstītas tabulas un to atbilstība 3NF.
 | receptes_id          | INT (FK) | Atsauce uz recepti |
 | sastavdaļas_id       | INT (FK) | Atsauce uz sastāvdaļu |
 | daudzums            | VARCHAR  | Sastāvdaļas daudzums |
-| piezīmes            | TEXT     | Papildu piezīmes |
+
 
 - **1NF**: Nav daudzvērtību vai salikto atribūtu.
 - **2NF**: Visi atribūti ir pilnībā atkarīgi no primārās atslēgas.
